@@ -1,0 +1,71 @@
+<html>
+
+<head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Activity 1.1</legend>
+
+            <label for="inputTxtCity">City:</label><br>
+            <input type="text" id="inputTxtCity" required><br><br>
+
+            <label for="inputTxtCountry">Country:</label><br>
+            <input type="text" id="inputTxtCountry" required><br><br>
+
+            <label for="inputNumPopulation">Population:</label><br>
+            <input type="number" id="inputNumPopulation" required><br><br>
+
+            <input type="button" value="Add" onclick="addCity()">
+
+        </fieldset>
+        <br />
+        <input type="text" placeholder="">
+        <input type="button" value="Search" onclick="btnSearch">
+        <br />
+        <br />
+        <table border="1" width="100%">
+            <tr>
+                <th>City</th>
+                <th>Country</th>
+                <th>Population</th>
+            </tr>
+            <tr>
+                <tbody>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                </tbody>
+            </tr>
+        </table>
+    </form>
+    <form>
+        <fieldset>
+            <legend>Activity 1.2</legend>
+            <input type="text" placeholder="ISBN" id="inputTxtISBN" maxlength="10">
+            <input type="button" value="Validate" onclick="validateISBN(inputTxtISBN.value)">
+            <span id="spanResult"></span>
+        </fieldset>
+    </form>
+    <form>
+        <fieldset>
+            <legend>Activity 1.3</legend>
+            <input type="text"  id="inputTxtChange">
+            <input type="button" value="Change It Up" onclick="changeItUp(inputTxtChange.value)">
+            <span id="spanResultChangeItUp"></span>
+        </fieldset>
+    </form>
+    <form>
+        <fieldset>
+            <legend>Activity 1.4</legend>
+            <input type="text"  id="inputTxtZero" placeholder="input comma delimited value">
+            <input type="button" value="Move Zero" onclick="moveZero(inputTxtZero.value)">
+            <span id="spanMoveZero"></span>
+        </fieldset>
+    </form>
+</body>
+<script>var exports = { "__esModule": { value: true } }</script>
+<script src="./index.js"></script>
+</head>
+
+</html>
