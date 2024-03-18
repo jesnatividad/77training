@@ -1,0 +1,7 @@
+<h1>BLOG LIST</h1>
+<div class="card-list">
+<app-blog-item *ngFor="let blog of blogArr" [blog]="blog" (editActionEmitter)="editBlog(blog.id)"></app-blog-item>
+</div>
+
+<app-command-bar (deleteAllActionEmitter) = "deleteAll()"></app-command-bar> 
+

@@ -1,0 +1,38 @@
+<div class="center">
+    <h1>Save Profile</h1>
+    <form #form="ngForm" onsubmit="">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="newProfile.name" name="name" required>
+            </mat-form-field>
+            
+        </p>
+        
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                
+                <input matInput  [(ngModel)]="newProfile.email" name="email"  email #email="ngModel">
+                <mat-error *ngIf="email.invalid">invalid email address!</mat-error>            
+            </mat-form-field>
+            
+            
+        </p>
+        
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Bio</mat-label>
+                <textarea matInput  [(ngModel)]="newProfile.bio" name="bio" required></textarea>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-checkbox  [(ngModel)]="newProfile.active" name="active">Active</mat-checkbox>
+        </p>
+        <button (click)="saveProfile()" mat-raised-button color="primary">SAVE</button>
+        <button (click)="resetProfile()" mat-raised-button color="warn">RESET</button>
+    </form>
+
+    
+</div>
