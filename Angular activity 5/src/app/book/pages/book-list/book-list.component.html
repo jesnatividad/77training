@@ -1,5 +1,0 @@
-<h1>BOOK LIST</h1>
-<div class="card-list">
-<app-book-item *ngFor="let book of bookArr" [book]="book" (editActionEmitter)="editBook(book.id)"></app-book-item>
-</div>
-<app-command-bar (deleteAllActionEmitter) = "deleteAll()"></app-command-bar> 
