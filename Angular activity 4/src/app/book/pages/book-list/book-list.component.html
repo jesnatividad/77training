@@ -1,0 +1,27 @@
+<h1>BOOK LIST</h1>
+<div class="card-list" *ngIf="!isAdd">
+<app-book-item *ngFor="let book of bookArr" [book]="book" (editActionEmitter)="editBook(book)" (deleteActionEmitter)="deleteBook(book.id)"></app-book-item>
+</div>
+
+<div *ngIf="isAdd">
+    <form [formGroup]="bookForm" class="container" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="id" id="id" value="id.value" >
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="outline">
+            <mat-label>NAME</mat-label>
+            <input matInput formControlName="name" id="name">
+        </mat-form-field><br/>
+        <mat-form-field appearance="outline">
+            <mat-label>AUTHORS</mat-label>
+            <input matInput formControlName="authors" id="authors">
+        </mat-form-field><br/>
+        <mat-form-field appearance="outline">
+            <mat-label>ISBN</mat-label>
+            <input matInput formControlName="isbn" id="isbn">
+        </mat-form-field><br/>
+    </form>
+</div>
+<app-command-bar (deleteAllActionEmitter) = "deleteAll()" (addActionEmitter)="addBook()"></app-command-bar> 

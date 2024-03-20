@@ -1,0 +1,33 @@
+<h1>BLOG LIST</h1>
+<div class="card-list col-5" *ngIf="!isAdd">
+    <app-blog-item *ngFor="let blog of blogArr" [blog]="blog" (editActionEmitter)="editBlog(blog)" (deleteActionEmitter)="deleteBlog(blog.id)"></app-blog-item>
+    
+</div>
+
+<div *ngIf="isAdd">
+    <form [formGroup]="blogForm" class="container" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>ID</mat-label>
+            <input matInput formControlName="id" id="id" value="id.value" >
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="outline">
+            <mat-label>TITLE</mat-label>
+            <input matInput formControlName="title" id="title">
+        </mat-form-field><br/>
+        <mat-form-field appearance="outline">
+            <mat-label>DESCRIPTION</mat-label>
+            <input matInput formControlName="description" id="description">
+        </mat-form-field><br/>
+        <mat-form-field appearance="outline">
+            <mat-label>AUTHOR</mat-label>
+            <input matInput formControlName="author" id="author">
+        </mat-form-field><br/>
+        <mat-form-field appearance="outline">
+            <mat-label>Comment</mat-label>
+            <input matInput formControlName="comments" id="comments">
+        </mat-form-field><br/>
+    </form>
+</div>
+
+<app-command-bar (deleteAllActionEmitter)="deleteAll()" (addActionEmitter)="addBlog()"></app-command-bar>

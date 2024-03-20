@@ -1,0 +1,16 @@
+<div style="display:flex">
+    <mat-card class="blogCard">
+        <mat-card-header>
+            <mat-card-title>{{blog?.title}}</mat-card-title>
+            <mat-card-subtitle>{{blog?.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+
+            <p>{{blog?.author}}</p>
+            <p>{{blog?.comments}}</p>
+
+            <button mat-flat-button color="primary" (click)="editBlog()">EDIT</button>
+            <button mat-flat-button color="warn" (click)="deleteBlog()">DELETE</button>
+        </mat-card-content>
+    </mat-card>
+</div>
